@@ -1,4 +1,4 @@
-package lab2.lab2bq2;
+package lab2.lab2bq3;
 
 //Made by Aaron Tierney
 //C00312018
@@ -15,8 +15,8 @@ public class RectangleDriver
         System.out.println(rectang.toString());
 
         //Testing setters
-        rectang.setLength(5);
-        rectang.setWidth(3);
+        rectang.setLength(10);
+        rectang.setWidth(10);
 
         //Testing getters
         System.out.println(rectang.getLength());
@@ -28,6 +28,8 @@ public class RectangleDriver
         //Testing new area and permitier methods
         System.out.println("Area: " + rectang.getArea());
         System.out.println("Perimiter: " + rectang.getPerimiter());
+
+        rectang.printRectangle();
 
     }
 
