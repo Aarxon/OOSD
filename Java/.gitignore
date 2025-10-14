@@ -1,20 +1,11 @@
-# Build output
 /bin/
 out/
 build/
-
-# VS Code settings (local only)
 .vscode/
-
-# Java language server cache files
 .classpath
 .project
 .settings/
-
-# OS-specific junk
 .DS_Store
 Thumbs.db
-
-# Temporary files
 *.log
 *.tmp
