@@ -1,16 +1,18 @@
+package lab4;
+
 public class Address 
 {
-    private String addressStr;
+    private String city;
+    private String street;
+    private String county;
 
-    public Address(String addressStr)
+    public Address(String city, String street, String county)
     {
-        this.addressStr = addressStr;
+        this.city = city;
+        this.street = street;
+        this.county = county;
     }
 
-    public void setAddress(String addressStr)
-    {
-        this.addressStr = addressStr;
-    }
     
 }
 
