@@ -62,6 +62,7 @@ public class MyHr
                     // Get employee details
                     System.out.println("Enter the employees name");
                     name = input.next(); 
+
                     System.out.println("Enter the employees Address");
                     System.out.println("City: ");
                     city = input.next();
