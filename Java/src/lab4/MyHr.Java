@@ -9,11 +9,15 @@ public class MyHr
         Scanner input = new Scanner(System.in);
         
   
-        Office off1 = new Office(100);
+        Employee[] employees = new Employee[4]
+        Office[] offices = new Office[2]
         Address addr1 = new Address("Athy", "Seaview", "Kildare");
         Employee John = new Employee("John", addr1, off1);
 
         //Variables
+        String name;
+        Address address;
+        Office office;
         int menuChoice;
         boolean menu;
         String info;
@@ -30,6 +34,10 @@ public class MyHr
             switch(menuChoice) 
             {
                 case 1:
+                    (for Office offices : offices)
+                    {
+                    System.out.println(offices)
+                    }
     
                 case 2:
                     System.out.println("Enter the employees name");
@@ -39,6 +47,10 @@ public class MyHr
                     System.out.println("County: ");
         
                 case 3:
+                    for(Employee employees : Employee)
+                    {
+                        System.out.println(employees)
+                    }
         
                 case 4:
                     menu = true;
