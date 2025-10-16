@@ -9,10 +9,10 @@ public class MyHr
         Scanner input = new Scanner(System.in);
         
   
-        Employee[] employees = new Employee[4]
-        Office[] offices = new Office[2]
+        Employee[] employees = new Employee[4];
+        Office[] offices = new Office[2];
         Address addr1 = new Address("Athy", "Seaview", "Kildare");
-        Employee John = new Employee("John", addr1, off1);
+    
 
         //Variables
         String name;
@@ -34,9 +34,9 @@ public class MyHr
             switch(menuChoice) 
             {
                 case 1:
-                    (for Office offices : offices)
+                    for(Office Office : offices)
                     {
-                    System.out.println(offices)
+                    System.out.println(offices);
                     }
     
                 case 2:
@@ -47,9 +47,9 @@ public class MyHr
                     System.out.println("County: ");
         
                 case 3:
-                    for(Employee employees : Employee)
+                    for(Employee Employee : employees)
                     {
-                        System.out.println(employees)
+                        System.out.println(employees);
                     }
         
                 case 4:

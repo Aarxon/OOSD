@@ -1,12 +1,14 @@
 package lab4;
 
-public class Office
+public class Office 
 {
-    private static int officeNums;
+    private int offnum = 100;
+    Employee[] employeeCount = new Employee[2];
 
-    public Office(int officeNums)
-    {   
-        this.officeNums = officeNums;
-        
+    public Office()
+    {
+        this.offnum = offnum; 
+        offnum ++;
     }
+    
 }
