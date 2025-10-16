@@ -2,10 +2,12 @@ package lab4;
 
 public class Address 
 {
+    // Instance variables
     private String city;
     private String street;
     private String county;
 
+    // Constructor
     public Address(String city, String street, String county)
     {
         this.city = city;
@@ -13,6 +15,11 @@ public class Address
         this.county = county;
     }
 
-    
+    // String representation
+    @Override
+    public String toString()
+    {
+        return "Address: " + "Street: " + street + ", City: " + city + ", County: " + county;
+    }
 }
 

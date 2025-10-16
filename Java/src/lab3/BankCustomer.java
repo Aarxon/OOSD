@@ -14,7 +14,8 @@ public class BankCustomer
         this.address = address;
     }
 
-    public void addAccount(SavingsAccount account) {
+    public void addAccount(SavingsAccount account) 
+    {
         if (numAccounts < 3) 
         {
             accounts[numAccounts] = account;

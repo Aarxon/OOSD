@@ -2,35 +2,32 @@ package lab4;
 
 public class Employee 
 {
+    // Instance variables
     private String name;
-    private String employeeTypev = "";
+    private String employeeType = "";
     private Address address;
     private Office office;
-    private int employeeCount;
 
+    // Static counter for total employees
     private static int employeeNum = 100;
 
-
-    public Employee(String name, Address address, Office office) {
+    // Constructor - creates employee with address and office assignment
+    public Employee(String name, int employeeNum, Address address, Office office) {
         this.name = name;
         this.address = address;
         this.office = office;
         employeeNum++;
     }
 
-    //Other Methods
-    public void createEmployee(int employeeCount)
-    {
-        employeeCount ++;
-    }
 
+    // String representation
     @Override
     public String toString()
     {
-        return "Employee Name: " + name + "Employee Address" + address + "Employee Office " + office;
+        return "Employee Name: " + name + "\n" + employeeNum + "\n" + address + "\n" + office;
     }
 
-    //Getters
+    // Getters
     public String getName() {
         return name;
     }
@@ -43,7 +40,11 @@ public class Employee
         return office;
     }
 
-    //Setters
+    public static int getEmployeeNum() {
+        return employeeNum;
+    }
+
+    // Setters
     public void setName(String name)
     {
         this.name = name;
