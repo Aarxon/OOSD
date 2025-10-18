@@ -69,6 +69,7 @@ public class MyHr
                         System.out.println("Enter the employees name");
                         name = input.next();
                         
+                        // Get employee type
                         System.out.println("Enter the employees type (0=manager, 1=staff)");
                         employeeTypeChoice = input.nextInt();
                         switch(employeeTypeChoice)
@@ -80,7 +81,7 @@ public class MyHr
                             default -> System.out.println("Invalid choice");
                         }
 
-                        
+                        // Get address details
                         System.out.println("Enter the employees Address:");
                         System.out.println("City: ");
                         city = input.next();
@@ -93,7 +94,7 @@ public class MyHr
                         county = input.next();
                         input.nextLine();
                         
-                        
+                        // Select office and check capacity
                         System.out.println("Select office (0=MainBranch, 1=Sales, 2=Tech): ");
                         int officeChoice = input.nextInt();
                         if(officeChoice == 0)
@@ -150,6 +151,7 @@ public class MyHr
                         office = offices[officeChoice];
                         address = new Address(city, street, county);
                         employees[employeeCount] = new Employee(name, employeeType, address, office);
+                        office.addEmployee();
                         employeeCount++;
                     }
                     else
@@ -159,6 +161,7 @@ public class MyHr
                 }
                 case 3 -> 
                 {
+                    // Display all employees or empty slots
                     for(int i = 0; i < employees.length; i++)
                     {
                         
@@ -173,14 +176,11 @@ public class MyHr
                         }
                     }
                 }
+                // Exit program
                 case 4 -> menu = true;
                 
                 default -> System.out.println("Invlad Choice");
             }
-            // Display all offices
-            // Create new employee
-            // Display all employees
-            // Exit program
                     }
     input.close();
     }

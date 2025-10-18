@@ -10,10 +10,9 @@ public class Employee
     private Office office;
     private String employeeType;
     private String employeeCar;
-    private int employeeCount = 0;
+    private static int employeeCount = 0;
     private static int carCount = 0;
-    private static final String[] cars = 
-{
+    private static final String[] cars = {
         "Black Volkswagen Golf", 
         "Red Ford Focus", 
         "White BMW 3 Series",
@@ -38,7 +37,7 @@ public class Employee
         employeeNumNext ++;
         employeeCount++;
 
-
+        // Assign car to managers only
         if(employeeType.equalsIgnoreCase("manager"))
         {
             employeeCar = cars[carCount];
@@ -46,7 +45,7 @@ public class Employee
         }
         else
         {
-            employeeCar = "N/a";
+            employeeCar = "N/A";
         }
     }
 

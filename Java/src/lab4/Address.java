@@ -4,8 +4,8 @@ public class Address
 {
     // Instance variables
     private final String city;
-    private String street;
-    private String county;
+    private final String street;
+    private final String county;
 
     // Constructor
     public Address(String city, String street, String county)
