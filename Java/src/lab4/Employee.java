@@ -4,19 +4,22 @@ public class Employee
 {
     // Instance variables
     private String name;
-    private String employeeType = "";
+    private String manager;
+    private String staff;
     private Address address;
     private Office office;
 
     // Static counter for total employees
-    private static int employeeNum = 100;
+    private static int employeeNumNext = 100;
+    private int employeeNum;
 
     // Constructor - creates employee with address and office assignment
-    public Employee(String name, int employeeNum, Address address, Office office) {
+    public Employee(String name, Address address, Office office) {
         this.name = name;
         this.address = address;
         this.office = office;
-        employeeNum++;
+        this.employeeNum = employeeNumNext;
+        employeeNumNext ++;
     }
 
 
@@ -24,7 +27,7 @@ public class Employee
     @Override
     public String toString()
     {
-        return "Employee Name: " + name + "\n" + employeeNum + "\n" + address + "\n" + office;
+        return "Employee Name: " + name + "\n" + "Employee Number: " + employeeNum + "\n" + address + "\n" + office;
     }
 
     // Getters
@@ -41,7 +44,7 @@ public class Employee
     }
 
     public static int getEmployeeNum() {
-        return employeeNum;
+        return employeeNumNext;
     }
 
     // Setters

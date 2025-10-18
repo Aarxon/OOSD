@@ -6,6 +6,8 @@ public class Office
     private static int nextID = 100;
     private  int office;
 
+
+
     // Constructor - assigns unique office number
     public Office()
     {   
