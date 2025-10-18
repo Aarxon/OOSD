@@ -112,38 +112,37 @@ public class MyHr
                                 System.out.println("Main Branch office is full!");
                                 break;
                             }
-                            if(officeChoice == 1)
+                        }
+                        else if(officeChoice == 1)
+                        {
+                            if(SalesOff[0] == null)
                             {
-                                if(SalesOff[0] == null)
-                                {
-                                    SalesOff[0] = offices[officeChoice];
-                                }
-                                else if(SalesOff[1] == null)
-                                {
-                                    SalesOff[1] = offices[officeChoice];
-                                }
-                                else
-                                {
-                                    System.out.println("Sales office is full!");
-                                    break;
-                                }
-                                if(officeChoice == 2)
-                                {
-                                    if(TechOff[0] == null)
-                                    {
-                                        TechOff[0] = offices[officeChoice];
-                                    }
-                                    else if(SalesOff[1] == null)
-                                    {
-                                        TechOff[1] = offices[officeChoice];
-                                    }
-                                    else
-                                    {
-                                        System.out.println("Sales office is full!");
-                                        break;
-                                    }
-                                }
-                                
+                                SalesOff[0] = offices[officeChoice];
+                            }
+                            else if(SalesOff[1] == null)
+                            {
+                                SalesOff[1] = offices[officeChoice];
+                            }
+                            else
+                            {
+                                System.out.println("Sales office is full!");
+                                break;
+                            }
+                        }
+                        else if(officeChoice == 2)
+                        {
+                            if(TechOff[0] == null)
+                            {
+                                TechOff[0] = offices[officeChoice];
+                            }
+                            else if(TechOff[1] == null)
+                            {
+                                TechOff[1] = offices[officeChoice];
+                            }
+                            else
+                            {
+                                System.out.println("Tech office is full!");
+                                break;
                             }
                         }
                         
