@@ -16,6 +16,7 @@ public class MyHr
         // Initialize arrays
         Employee[] employees = new Employee[5];
         Office[] offices = new Office[3];
+    
         offices[0] = MainBranch;
         offices[1] = Sales;
         offices[2] = Tech;
@@ -35,6 +36,9 @@ public class MyHr
         Office office;
         int menuChoice;
         boolean menu;
+        int employeeTypeChoice;
+        String employeeType = " ";
+        
 
 
         employeeCount = 0;
@@ -50,124 +54,134 @@ public class MyHr
             menuChoice = input.nextInt();
             switch(menuChoice) 
             {
-                // Display all offices
-                case 1:
-                    for(int i = 0; i < offices.length; i++)
-                    {
-                    System.out.println(offices[i]);
-                    }
-                    break;
-
-                // Create new employee
-                case 2:
-                if(employeeCount < 5)
+                case 1 -> 
                 {
-                    // Get employee details
-                    System.out.println("Enter the employees name");
-                    name = input.next(); 
-
-                    System.out.println("Enter the employees Address:");
-                    System.out.println("City: ");
-                    city = input.next();
-    
-                    System.out.println("Street: ");
-                    street = input.next();
-                    
-    
-                    System.out.println("County: ");
-                    county = input.next();
-                    input.nextLine();
-
-
-                    System.out.println("Select office (0=MainBranch, 1=Sales,22=Tech): ");
-                    int officeChoice = input.nextInt();
-                    if(officeChoice == 0)
+                for (Office office1 : offices) 
+                {
+                    System.out.println(office1);
+                }
+                }
+                case 2 -> 
+                {
+                    if(employeeCount < 5)
                     {
-                        if(MainBranchOff[0] == null)
+                        // Get employee details
+                        System.out.println("Enter the employees name");
+                        name = input.next();
+                        
+                        System.out.println("Enter the employees type (0=manager, 1=staff)");
+                        employeeTypeChoice = input.nextInt();
+                        switch(employeeTypeChoice)
                         {
-                            MainBranchOff[0] = offices[officeChoice];
+                            case 0 -> employeeType = "Manager";
+                                
+                            case 1 -> employeeType = "Staff";
+                                
+                            default -> System.out.println("Invalid choice");
                         }
-                        else if(MainBranchOff[1] == null)
+
+                        
+                        System.out.println("Enter the employees Address:");
+                        System.out.println("City: ");
+                        city = input.next();
+                        
+                        System.out.println("Street: ");
+                        street = input.next();
+                        
+                        
+                        System.out.println("County: ");
+                        county = input.next();
+                        input.nextLine();
+                        
+                        
+                        System.out.println("Select office (0=MainBranch, 1=Sales, 2=Tech): ");
+                        int officeChoice = input.nextInt();
+                        if(officeChoice == 0)
                         {
-                            MainBranchOff[1] = offices[officeChoice];
-                        }
-                        else
-                        {
-                            System.out.println("Main Branch office is full!");
-                            break;
-                        }
-                        if(officeChoice == 1)
-                        {
-                            if(SalesOff[0] == null)
+                            if(MainBranchOff[0] == null)
                             {
-                                SalesOff[0] = offices[officeChoice];
+                                MainBranchOff[0] = offices[officeChoice];
                             }
-                            else if(SalesOff[1] == null)
+                            else if(MainBranchOff[1] == null)
                             {
-                                SalesOff[1] = offices[officeChoice];
+                                MainBranchOff[1] = offices[officeChoice];
                             }
                             else
                             {
-                                System.out.println("Sales office is full!");
+                                System.out.println("Main Branch office is full!");
                                 break;
                             }
-                        if(officeChoice == 2)
-                        {
-                             if(TechOff[0] == null)
+                            if(officeChoice == 1)
                             {
-                                TechOff[0] = offices[officeChoice];
-                            }
-                            else if(SalesOff[1] == null)
-                            {
-                                TechOff[1] = offices[officeChoice];
-                            }
-                            else
-                            {
-                                System.out.println("Sales office is full!");
-                                break;
+                                if(SalesOff[0] == null)
+                                {
+                                    SalesOff[0] = offices[officeChoice];
+                                }
+                                else if(SalesOff[1] == null)
+                                {
+                                    SalesOff[1] = offices[officeChoice];
+                                }
+                                else
+                                {
+                                    System.out.println("Sales office is full!");
+                                    break;
+                                }
+                                if(officeChoice == 2)
+                                {
+                                    if(TechOff[0] == null)
+                                    {
+                                        TechOff[0] = offices[officeChoice];
+                                    }
+                                    else if(SalesOff[1] == null)
+                                    {
+                                        TechOff[1] = offices[officeChoice];
+                                    }
+                                    else
+                                    {
+                                        System.out.println("Sales office is full!");
+                                        break;
+                                    }
+                                }
+                                
                             }
                         }
                         
-                        }
+                        // Create and store employee
+                        office = offices[officeChoice];
+                        address = new Address(city, street, county);
+                        employees[employeeCount] = new Employee(name, employeeType, address, office);
+                        employeeCount++;
                     }
-                   
-
-                    // Create and store employee
-                    office = offices[officeChoice];
-                    address = new Address(city, street, county);
-                    employees[employeeCount] = new Employee(name, address, office);
-                    employeeCount++;
-
+                    else
+                    {
+                        System.out.println("You have reached the maximum number of employees!");
+                    }
                 }
-                else
+                case 3 -> 
                 {
-                    System.out.println("You have reached the maximum number of employees!");
-                }
-                    break;
-                    
-        
-                // Display all employees
-                case 3:
                     for(int i = 0; i < employees.length; i++)
                     {
+                        
                         if(employees[i] == null)
                         {
                             System.out.println((i +1 ) + "." +" Empty Employee Slot");
                         }
-                        else{
-                        System.out.println(employees[i]);
-                        System.out.println();
+                        else 
+                        {
+                            System.out.println(employees[i]);
+                            System.out.println();
                         }
                     }
-                    break;
-        
-                // Exit program
-                case 4:
-                    menu = true;
-                    break;
-
+                }
+                case 4 -> menu = true;
+                
+                default -> System.out.println("Invlad Choice");
             }
-        }
+            // Display all offices
+            // Create new employee
+            // Display all employees
+            // Exit program
+                    }
     input.close();
     }
 

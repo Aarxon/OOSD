@@ -3,7 +3,7 @@ package lab4;
 public class Address 
 {
     // Instance variables
-    private String city;
+    private final String city;
     private String street;
     private String county;
 
