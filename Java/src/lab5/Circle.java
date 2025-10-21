@@ -1,3 +1,5 @@
+package lab5;
+
 // Circle class that extends Point to add radius functionality
 public class Circle extends Point
 {
@@ -24,6 +26,7 @@ public class Circle extends Point
     }
 
     // Override toString to include radius information
+    @Override
     public String toString()
     {
         return "X: " + x + " Y: " + y  + " Radius : " + radius;

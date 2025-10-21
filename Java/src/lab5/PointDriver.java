@@ -1,3 +1,5 @@
+package lab5;
+
 public class PointDriver 
 {
     public static void main(String[] args) 
