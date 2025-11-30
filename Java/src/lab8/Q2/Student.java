@@ -13,7 +13,7 @@ public class Student extends Person
     @Override
     public String getDescription()
     {
-        return "This is a student studying " + course + ".";
+        return "A student studying " + course + ".";
     }
 
 }
