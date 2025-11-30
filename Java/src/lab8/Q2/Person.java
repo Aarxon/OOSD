@@ -1,5 +1,17 @@
 package lab8.Q2;
 
-public abstract class Person {
-    
+public abstract class Person 
+{
+    String name;
+    public Person(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public abstract String getDescription();
 }
